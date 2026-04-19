@@ -1,0 +1,32 @@
+{
+  "name": "delic-signalizacija",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.102",
+    "@iconify-json/simple-icons": "^1.2.78",
+    "@nuxt/ui": "^4.6.1",
+    "@primeuix/themes": "^2.0.3",
+    "nuxt": "^4.4.2",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.5",
+    "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.15.2",
+    "@primevue/nuxt-module": "^4.5.5",
+    "eslint": "^10.2.0",
+    "sass": "^1.99.0",
+    "typescript": "^6.0.2",
+    "vue-tsc": "^3.2.6"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
