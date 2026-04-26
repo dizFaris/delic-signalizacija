@@ -15,27 +15,20 @@ const submit = () => {
 <template>
   <div class="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
     <Card>
-      <template #title>
-        Kontakt
-      </template>
+      <template #title> Kontakt </template>
       <template #content>
-        <div class="space-y-4 leading-7 text-surface-600">
+        <div class="space-y-4 leading-7 text-zinc-600">
           <p>
-            Ovo je razvojna forma spremna da se poveze sa backend servisom,
-            email gateway-em ili CRM integracijom.
+            Ovo je razvojna forma spremna da se poveze sa backend servisom, email gateway-em ili CRM
+            integracijom.
           </p>
-          <p>
-            Trenutno sluzi kao validna PrimeVue osnova za dalji razvoj
-            kontaktnog toka.
-          </p>
+          <p>Trenutno sluzi kao validna PrimeVue osnova za dalji razvoj kontaktnog toka.</p>
         </div>
       </template>
     </Card>
 
     <Card>
-      <template #title>
-        Posaljite upit
-      </template>
+      <template #title> Posaljite upit </template>
       <template #content>
         <form
           class="space-y-4"
@@ -67,16 +60,16 @@ const submit = () => {
               label="Sacuvaj test unos"
               rounded
             />
-            <span class="text-sm text-surface-500">Povezite ovu formu na stvarni endpoint kada budete spremni.</span>
+            <span class="text-sm text-zinc-500"
+              >Povezite ovu formu na stvarni endpoint kada budete spremni.</span
+            >
           </div>
 
           <Message
             v-if="submitted"
-            severity="success"
             :closable="false"
           >
-            Forma radi kao razvojni scaffold. Sljedeci korak je povezivanje sa
-            backend obradom.
+            Forma radi kao razvojni scaffold. Sljedeci korak je povezivanje sa backend obradom.
           </Message>
         </form>
       </template>

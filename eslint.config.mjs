@@ -11,12 +11,27 @@ export default withNuxt({
     '@stylistic/indent': ['error', 2],
     '@stylistic/key-spacing': ['error', { beforeColon: false, afterColon: true }],
     '@stylistic/object-curly-spacing': ['error', 'always'],
-    '@stylistic/quotes': [
-      'error',
-      'single',
-      { avoidEscape: true, allowTemplateLiterals: 'always' }
-    ],
+    '@stylistic/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: 'always' }],
     '@stylistic/semi': ['error', 'never'],
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'always',
+          component: 'always'
+        },
+        svg: 'always',
+        math: 'always'
+      }
+    ],
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: { max: 10 },
+        multiline: { max: 1 }
+      }
+    ],
     'vue/singleline-html-element-content-newline': 'off'
   }
 })

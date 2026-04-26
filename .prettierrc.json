@@ -6,8 +6,8 @@
   "singleQuote": true,
   "quoteProps": "preserve",
   "vueIndentScriptAndStyle": false,
-  "printWidth": 100,
+  "printWidth": 120,
   "bracketSameLine": false,
-  "singleAttributePerLine": true,
+  "singleAttributePerLine": false,
   "arrowParens": "always"
 }

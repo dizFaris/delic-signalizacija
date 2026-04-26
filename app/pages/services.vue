@@ -2,15 +2,18 @@
 const services = [
   {
     title: 'Vertikalna signalizacija',
-    description: 'Projektovanje, izrada i montaza znakova, tabli i informacionih elemenata za objekte i saobracajne povrsine.'
+    description:
+      'Projektovanje, izrada i montaza znakova, tabli i informacionih elemenata za objekte i saobracajne povrsine.'
   },
   {
     title: 'Horizontalno obiljezavanje',
-    description: 'Iscrtavanje parking mjesta, internih komunikacija, sigurnosnih zona i industrijskih oznaka.'
+    description:
+      'Iscrtavanje parking mjesta, internih komunikacija, sigurnosnih zona i industrijskih oznaka.'
   },
   {
     title: 'Sigurnosna oprema',
-    description: 'Stubici, zastitne barijere, ogledala, oznake i dodatna oprema za bezbjedno kretanje ljudi i vozila.'
+    description:
+      'Stubici, zastitne barijere, ogledala, oznake i dodatna oprema za bezbjedno kretanje ljudi i vozila.'
   }
 ]
 </script>
@@ -20,14 +23,14 @@ const services = [
     <div class="space-y-3">
       <Tag
         value="Usluge"
-        severity="secondary"
         rounded
       />
-      <h1 class="text-4xl font-semibold tracking-tight text-surface-900">
+      <h1 class="text-4xl font-semibold tracking-tight text-black">
         Primarni razvojni sadrzaj za stranicu usluga
       </h1>
-      <p class="max-w-3xl text-lg leading-8 text-surface-600">
-        Stranica je spremna da se dopuni pravim ponudama, referencama, galerijama i cijenama bez dodatnih izmjena osnovnog routinga.
+      <p class="max-w-3xl text-lg leading-8 text-zinc-600">
+        Stranica je spremna da se dopuni pravim ponudama, referencama, galerijama i cijenama bez
+        dodatnih izmjena osnovnog routinga.
       </p>
     </div>
 
@@ -40,7 +43,7 @@ const services = [
           {{ service.title }}
         </template>
         <template #content>
-          <p class="leading-7 text-surface-600">
+          <p class="leading-7 text-zinc-600">
             {{ service.description }}
           </p>
         </template>

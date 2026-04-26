@@ -1,41 +1,160 @@
-@theme static {
-  --font-sans: 'Public Sans', sans-serif;
-
-  --color-green-50: #effdf5;
-  --color-green-100: #d9fbe8;
-  --color-green-200: #b3f5d1;
-  --color-green-300: #75edae;
-  --color-green-400: #00dc82;
-  --color-green-500: #00c16a;
-  --color-green-600: #00a155;
-  --color-green-700: #007f45;
-  --color-green-800: #016538;
-  --color-green-900: #0a5331;
-  --color-green-950: #052e16;
-}
-
 :root {
+  --font-sans: 'Public Sans', sans-serif;
+  --color-orange-50: #fff6eb;
+  --color-orange-100: #ffead1;
+  --color-orange-200: #ffd29f;
+  --color-orange-300: #ffb45f;
+  --color-orange-400: #fc9619;
+  --color-orange-500: #e98407;
+  --color-orange-600: #c96c00;
+  --color-orange-700: #a55605;
+  --color-orange-800: #85460d;
+  --color-orange-900: #6d3a0f;
+  --color-orange-950: #3b1d05;
   color-scheme: light;
-  --app-navbar-height: 5.5rem;
+  --app-navbar-height: 4.5rem;
+  --app-bg: #fffdf8;
+  --app-bg-elevated: #ffffff;
+  --app-bg-soft: #fff6eb;
+  --app-border: rgb(252 150 25 / 0.18);
+  --app-border-strong: rgb(252 150 25 / 0.34);
+  --app-text: #111111;
+  --app-text-muted: #52525b;
+  --p-button-primary-background: #fc9619;
+  --p-button-primary-hover-background: #ffab44;
+  --p-button-primary-active-background: #e98407;
+  --p-button-primary-border-color: #fc9619;
+  --p-button-primary-hover-border-color: #ffab44;
+  --p-button-primary-active-border-color: #e98407;
+  --p-button-primary-color: #1c1002;
+  --p-button-primary-hover-color: #1c1002;
+  --p-button-primary-active-color: #1c1002;
+  --p-button-primary-focus-ring-color: rgb(252 150 25 / 0.28);
+  --p-button-outlined-primary-border-color: #c96c00;
+  --p-button-outlined-primary-color: #c96c00;
+  --p-button-outlined-primary-hover-background: rgb(252 150 25 / 0.12);
+  --p-button-outlined-primary-active-background: rgb(252 150 25 / 0.2);
+  --p-tag-primary-background: rgb(252 150 25 / 0.12);
+  --p-tag-primary-color: #8a4b00;
+  --p-tag-rounded-border-radius: 9999px;
 }
 
 html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
+  min-height: 100%;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  background:
+    radial-gradient(circle at top left, rgb(252 150 25 / 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgb(252 150 25 / 0.06), transparent 22%),
+    linear-gradient(180deg, #fffdf8 0%, #ffffff 100%);
 }
 
 body {
   margin: 0;
+  min-height: 100%;
+  overflow-x: clip;
   background:
-    radial-gradient(circle at top left, rgb(22 163 74 / 0.08), transparent 30%),
-    linear-gradient(180deg, #f8fafc 0%, #eef3f7 100%);
-  color: #0f172a;
+    radial-gradient(circle at top left, rgb(252 150 25 / 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgb(252 150 25 / 0.06), transparent 22%),
+    linear-gradient(180deg, #fffdf8 0%, #ffffff 100%);
+  color: var(--app-text);
 }
 
 a {
   color: inherit;
 }
 
+::selection {
+  background: rgb(252 150 25 / 0.35);
+  color: #111111;
+}
+
 #__nuxt {
   min-height: 100vh;
+}
+
+.p-card {
+  border: 1px solid var(--app-border);
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf3 100%);
+  color: var(--app-text);
+  box-shadow: 0 18px 48px rgb(17 17 17 / 0.08);
+}
+
+.p-card .p-card-title,
+.p-card .p-card-caption,
+.p-card .p-card-body {
+  color: var(--app-text);
+}
+
+.p-card .p-card-content {
+  color: var(--app-text-muted);
+}
+
+.p-message,
+.p-message.p-message-success {
+  border: 1px solid var(--app-border-strong);
+  background: rgb(252 150 25 / 0.12);
+  color: #8a4b00;
+}
+
+.p-tag {
+  border: 1px solid var(--app-border-strong);
+}
+
+.p-button {
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: none !important;
+}
+
+.p-button:hover,
+.p-button:focus,
+.p-button:focus-visible,
+.p-button.p-focus {
+  box-shadow: none !important;
+}
+
+.p-button:not(.p-button-outlined) {
+  border-color: #fc9619;
+  background: #fc9619;
+  color: #1c1002;
+}
+
+.p-button:not(.p-button-outlined):hover {
+  border-color: #ffab44;
+  background: #ffab44;
+}
+
+.p-button.p-button-outlined {
+  border-color: var(--app-border-strong);
+  background: transparent;
+  color: #c96c00;
+}
+
+.p-button.p-button-outlined:hover {
+  background: rgb(252 150 25 / 0.12);
+}
+
+.p-inputtext,
+.p-textarea {
+  border-color: rgb(17 17 17 / 0.08);
+  background: #ffffff;
+  color: var(--app-text);
+}
+
+.p-inputtext::placeholder,
+.p-textarea::placeholder {
+  color: rgb(82 82 91 / 0.7);
+}
+
+.p-inputtext:enabled:focus,
+.p-textarea:enabled:focus {
+  border-color: #fc9619;
+  box-shadow: 0 0 0 1px rgb(252 150 25 / 0.2);
 }
