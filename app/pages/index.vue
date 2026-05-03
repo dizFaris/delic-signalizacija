@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import ContactCard from '~/components/ContactCard.vue'
 
 const goToContact = () => navigateTo('/contact')
 const goToServices = () => navigateTo('/services')
@@ -15,22 +16,30 @@ const sectors = [
   {
     number: '01.',
     title: 'Javne saobraćajnice',
-    description: 'Magistralni i lokalni putevi, gradske ulice'
+    description: 'Magistralni i lokalni putevi, gradske ulice i rekonstrukcije prometnih dionica.',
+    image: '/kompanija.webp',
+    icon: 'pi pi-directions'
   },
   {
     number: '02.',
     title: 'Industrijske zone',
-    description: 'Fabrički krugovi, skladišta i logistički centri'
+    description: 'Fabrički krugovi, skladišta i logistički centri sa jasno definisanim tokovima kretanja.',
+    image: '/art_direction.jpg',
+    icon: 'pi pi-building'
   },
   {
     number: '03.',
     title: 'Parking prostori',
-    description: 'Garaže, otvoreni parkinzi, tržni centri'
+    description: 'Garaže, otvoreni parkinzi i tržni centri gdje je potrebna precizna organizacija prostora.',
+    image: '/art_direction.jpg',
+    icon: 'pi pi-car'
   },
   {
     number: '04.',
     title: 'Specijalne namjene',
-    description: 'Aerodromske piste, sportski tereni i igrališta'
+    description: 'Aerodromske piste, sportski tereni i igrališta sa posebnim zahtjevima signalizacije.',
+    image: '/kompanija.webp',
+    icon: 'pi pi-star'
   }
 ]
 
@@ -157,31 +166,38 @@ const scrollToServices = () => {
         </div>
 
         <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <Card
+          <article
             v-for="sector in sectors"
             :key="sector.number"
-            class="group h-full rounded-xl !border-white/10 !bg-[linear-gradient(180deg,rgba(39,39,42,0.92)_0%,rgba(24,24,27,0.98)_100%)] !shadow-[0_20px_44px_rgba(0,0,0,0.3),0_10px_24px_rgba(252,150,25,0.08)] transition-all duration-300 hover:!-translate-y-1 hover:!border-orange-400/40 hover:!shadow-[0_26px_56px_rgba(0,0,0,0.38),0_14px_28px_rgba(252,150,25,0.14)]"
+            class="group overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(39,39,42,0.92)_0%,rgba(24,24,27,0.98)_100%)] shadow-[0_20px_44px_rgba(0,0,0,0.3),0_10px_24px_rgba(252,150,25,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/40 hover:shadow-[0_26px_56px_rgba(0,0,0,0.38),0_14px_28px_rgba(252,150,25,0.14)]"
           >
-            <template #header>
+            <div class="overflow-hidden">
               <img
-                src="/art_direction.jpg"
-                alt="Signalizacija projekat"
-                class="h-48 w-full rounded-t-xl object-cover lg:h-52"
+                :src="sector.image"
+                :alt="sector.title"
+                class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105 lg:h-52"
               />
-            </template>
-            <template #content>
-              <div class="flex h-full min-h-40 flex-col">
-                <p class="text-sm font-semibold tracking-[0.22em] text-orange-500">{{ sector.number }}</p>
-                <h3 class="mt-4 text-xl font-bold tracking-tight text-white">{{ sector.title }}</h3>
-                <p class="mt-3 text-base leading-7 text-zinc-300">{{ sector.description }}</p>
-                <div class="mt-auto pt-5">
-                  <div class="h-0.5 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full" />
+            </div>
+            <div class="flex min-h-56 flex-col p-6">
+              <div class="flex items-center justify-between gap-4">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500 transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white"
+                >
+                  <i :class="[sector.icon, '!text-2xl']" />
                 </div>
+                <p class="text-sm font-semibold tracking-[0.22em] text-orange-500">{{ sector.number }}</p>
               </div>
-            </template>
-          </Card>
+              <h3 class="mt-6 text-xl font-bold tracking-tight text-white">{{ sector.title }}</h3>
+              <p class="mt-3 text-base leading-7 text-zinc-300">{{ sector.description }}</p>
+              <div class="mt-auto pt-6">
+                <div class="h-0.5 w-0 bg-orange-500 transition-all duration-300 group-hover:w-full" />
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
+
+    <ContactCard />
   </div>
 </template>

@@ -7,10 +7,10 @@ let savedBodyStyles = {}
 let lockedScrollY = 0
 
 const navItems = [
-  { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Services', to: '/services' },
-  { label: 'Contact', to: '/contact' }
+  { label: 'Početna', to: '/' },
+  { label: 'O nama', to: '/about' },
+  { label: 'Usluge', to: '/services' },
+  { label: 'Kontakt', to: '/contact' }
 ]
 
 const setBodyScrollLock = (isLocked) => {
@@ -57,25 +57,25 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <header class="fixed inset-x-0 top-0 z-[70] border-b border-orange-400/15 bg-white/90 backdrop-blur-md">
+  <header class="fixed inset-x-0 top-0 z-[70] border-b border-white/10 bg-zinc-900">
     <div
       class="mx-auto flex min-h-[var(--app-navbar-height)] max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8"
     >
       <NuxtLink
         to="/"
-        class="flex shrink-0 items-center text-orange-500 no-underline"
-        aria-label="Delic Signalizacija home"
+        class="flex shrink-0 items-center text-white no-underline"
+        aria-label="Delić Signalizacija početna stranica"
       >
         <AppLogo class="h-auto w-40 sm:w-48" />
       </NuxtLink>
 
-      <nav class="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
+      <nav class="hidden items-center gap-8 md:flex" aria-label="Glavna navigacija">
         <NuxtLink
           v-for="item in navItems"
           :key="item.label"
           :to="item.to"
-          class="text-sm font-medium tracking-[0.08em] text-zinc-700 uppercase transition-colors duration-200 hover:text-orange-500"
-          active-class="text-orange-500"
+          class="nav-link text-sm font-medium tracking-[0.08em] text-white uppercase transition-colors duration-200"
+          active-class="nav-link-active"
         >
           {{ item.label }}
         </NuxtLink>
@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
         :class="{ 'menu-toggle-open': isMenuOpen }"
         :aria-expanded="isMenuOpen"
         aria-controls="mobile-menu"
-        aria-label="Toggle navigation menu"
+        aria-label="Otvori ili zatvori navigaciju"
         @click="isMenuOpen = !isMenuOpen"
       >
         <span />
@@ -102,22 +102,22 @@ onBeforeUnmount(() => {
       <button
         type="button"
         class="absolute inset-0 bg-black/20"
-        aria-label="Close navigation menu"
+        aria-label="Zatvori navigaciju"
         @click="isMenuOpen = false"
       />
 
       <aside
         id="mobile-menu"
-        class="drawer-panel relative ml-auto flex h-full w-[min(22rem,85vw)] flex-col border-l border-orange-400/15 bg-white px-6 pb-8 pt-6 shadow-2xl"
-        aria-label="Mobile navigation"
+        class="drawer-panel relative ml-auto flex h-full w-[min(22rem,85vw)] flex-col border-l border-white/10 bg-zinc-900 px-6 pb-8 pt-6 shadow-2xl text-white"
+        aria-label="Mobilna navigacija"
       >
         <nav class="flex flex-col gap-2">
           <NuxtLink
             v-for="item in navItems"
             :key="item.label"
             :to="item.to"
-            class="rounded-xl px-4 py-3 text-base font-semibold text-zinc-700 transition-colors duration-200 hover:bg-orange-400/10 hover:text-orange-500"
-            active-class="bg-orange-400/10 text-orange-500"
+            class="mobile-nav-link rounded-xl px-4 py-3 text-base font-semibold text-zinc-300 transition-colors duration-200 hover:bg-white/5 hover:text-white"
+            active-class="mobile-nav-link-active"
             @click="isMenuOpen = false"
           >
             {{ item.label }}
@@ -129,15 +129,52 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="scss">
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  color: white;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--p-button-primary-background);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &.nav-link-active {
+    color: var(--p-button-primary-background);
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.mobile-nav-link {
+  &.mobile-nav-link-active {
+    color: var(--p-button-primary-background) !important;
+    background: rgb(from var(--p-button-primary-background) r g b / 0.1);
+  }
+}
+
 .menu-toggle {
   position: relative;
   z-index: 80;
   height: 3rem;
   width: 3rem;
-  border: 1px solid rgb(252 150 25 / 0.22);
+  border: none;
   border-radius: 9999px;
-  background: rgb(255 255 255 / 0.92);
-  color: #fc9619;
+  background: transparent;
+  color: white;
 
   span {
     position: absolute;
