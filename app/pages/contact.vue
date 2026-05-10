@@ -61,7 +61,7 @@ const contactItems = [
           <!-- Google Maps -->
           <div class="overflow-hidden rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.15)] min-h-[340px] lg:min-h-0">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11520.635451634498!2d18.3890!3d43.8563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c93d88b8c98f%3A0x1f99d1f1dde7f9b0!2sSarajevo!5e0!3m2!1sbs!2sba!4v1714900000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8562.431198556254!2d15.85567554154494!3d44.807515472507816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4761403da286f709%3A0xe6364ebfe8314c1f!2sDELI%C4%86%20SIGNALIZACIJA%20-%20zebra!5e0!3m2!1sen!2sat!4v1778426321341!5m2!1sen!2sat"
               width="100%"
               height="100%"
               style="border: 0; min-height: 340px"
